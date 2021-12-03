@@ -1,0 +1,51 @@
+.startscreen-bg {
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    background-color: #cccccc;
+    background-image: url('../../assets/img/gui_elements/start_bg.jpg'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-menu{
+    
+    width: 80vw;
+    height: 80vw * (1304/1839);
+    background-image: url('../../assets/img/gui_elements/bg_full.png'); 
+    //background-position: center;
+    //background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-label{
+    
+    width: 40vw;
+    height: 40vw * (465/2000);
+    margin-top: 30%;
+    color: #a31919;
+    cursor: pointer;
+    font-size: 2.5vw;
+    font-weight: bold;
+    background-image: url('../../assets/img/gui_elements/label.png'); 
+    //background-position: center;
+    //background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        height: 50vw * (465/2000);
+        width: 50vw;
+        font-size: 3vw;
+        filter: brightness(1.3);
+    }
+}
