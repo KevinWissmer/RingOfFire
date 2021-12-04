@@ -7,9 +7,33 @@
 }
 
 .single-player-wrapper {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
     height: 90%;
-    width: 150px;
-    background-color: black;
-    margin-left: 5px;
-    margin-right: 5px;
+    width: 120px;
+    background-color: grey;
+    margin: 15px;
+    span{
+        background-color: khaki;
+        text-align: center;
+    }
+}
+
+.player-img {
+    position: relative;
+    background-color: khaki;
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 100%;
+    img{
+        position:  absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 100%;
+    }
 }

@@ -69,3 +69,19 @@ $ring_radius: 20vw;
     transform: unset !important;
     transform: rotateY(180deg) !important;
 }
+
+.players-wrapper {
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-player-wrapper {
+    height: 90%;
+    width: 150px;
+    background-color: black;
+    margin-left: 5px;
+    margin-right: 5px;
+}

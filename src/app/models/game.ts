@@ -1,8 +1,10 @@
 export class Game {
     public cards: { id: number, name: string, img: string, number: number }[] = [];
+    public players: { id: number, name: string, img: string}[] = [];
 
     constructor() {
         this.createCards();
+        this.players = [{"id": 1, "name": "Peter", "img": "/assets/img/profile/default_player.png"}, {"id": 2, "name": "Robert", "img": "/assets/img/profile/default_player.png"}]
     }
 
     createCards() {
