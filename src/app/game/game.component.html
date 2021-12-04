@@ -1,5 +1,12 @@
 <div class="game-bg">
     <div class="card-stack">
-        <img  *ngFor="let c of cards_ids; let i = index" [class.active]="selectedIndex === i"  [id]="c" (click)="setIndex(i)" [ngStyle]="{'transform': 'rotate(' + c * (360/52) +'deg)' }"  src="/assets/img/cards/bg/gray_back.png" >
+        <ng-container *ngFor="let c of cards_ids; let i = index">
+            <img *ngIf="cards_ids.indexOf(i)>-1" [class.upper-card]="selected_index == c" [class.active]="deletables.indexOf(i)>-1" [id]="c"
+                (click)="setIndex(i)" [ngStyle]="{'transform': 'rotate(' + c * (360/52) +'deg)' }"
+                src="/assets/img/cards/bg/gray_back.png">
+            <img *ngIf="cards_ids.indexOf(i)>-1" [class.upper-card]="selected_index == c" class="flip-card-inner" [class.flip-card]="deletables.indexOf(i)>-1" [id]="c"
+                (click)="setIndex(i)" [ngStyle]="{'transform': 'rotate(' + c * (360/52) +'deg)' }"
+                src="/assets/img/cards/bg/blue_back.png">
+        </ng-container>
     </div>
 </div>
