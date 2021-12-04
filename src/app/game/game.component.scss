@@ -3,7 +3,7 @@ $card_width: $card_height * 346/529;
 $ring_radius: 20vw;
 
 .game-bg {
-    height: 100vh;
+    height: 85vh;
     width: 100vw;
     max-width: 100%;
     background-color: #cccccc;
@@ -50,6 +50,10 @@ $ring_radius: 20vw;
 }
 
 .upper-card {
+    z-index: 3 !important;
+}
+
+.second-upper-card {
     z-index: 2 !important;
 }
 

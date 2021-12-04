@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Game } from '../models/game';
 
 
 @Component({
@@ -7,24 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  cards_ids = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  cards_ids = Array.from(Array(52).keys())
+  game!: Game;
   selected_index = -1;
   deletables = [-5];
+  last_selected_index = -1;
+
+  constructor() { }
+  
+  ngOnInit(): void {
+    this.newGame();
+  }
+
+  newGame() {
+    this.game = new Game();
+    console.log(this.game);
+  }
+  
   setIndex(index: number) {
+    this.last_selected_index = this.selected_index;
     this.selected_index = index;
     this.deletables.push(index);
+    console.log(this.game.cards[index]);
   }
-
-
-  takeCardFromStack() {
-    //asd
-  }
-
 }
 
