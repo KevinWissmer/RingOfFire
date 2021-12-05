@@ -10,6 +10,7 @@
     flex-direction: column;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 90%;
     width: 120px;
     background-color: grey;
@@ -19,6 +20,7 @@
         text-align: center;
     }
 }
+
 
 .player-img {
     position: relative;
