@@ -14,23 +14,13 @@ export class GameComponent implements OnInit {
   deletables = [-5];
   last_selected_index = -1;
 
-  constructor(public dialog: MatDialog) { }
+  constructor() { }
   
   ngOnInit(): void {
     this.newGame();
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '250px',
-      data: {name: this.name, animal: this.animal},
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
-    });
-  }
 
   newGame() {
     this.game = new Game();

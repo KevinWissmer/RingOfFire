@@ -9,6 +9,12 @@ export class DialogAddPlayerComponent implements OnInit {
 
   constructor() { }
 
+  name: string = '';
+
+  onNoClick() {
+    
+  }
+
   ngOnInit(): void {
   }
 
