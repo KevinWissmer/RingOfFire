@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-dialog-add-player',
@@ -7,13 +13,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogAddPlayerComponent implements OnInit {
 
-  constructor() { }
+  player_name: string = '';
 
-  name: string = '';
-
-  onNoClick() {
-    
-  }
+  constructor(  
+    public dialogRef: MatDialogRef<DialogAddPlayerComponent>
+) { }
 
   ngOnInit(): void {
   }

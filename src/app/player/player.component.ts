@@ -9,14 +9,16 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class PlayerComponent implements OnInit {
   @Input() game;
-  
+  public player_name: string = '';
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log('qweqwe dialog was closed', result);
+      this.player_name = result;
+      this.game.addPlayer(result);
     });
   }
 

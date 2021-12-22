@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     StartScreenComponent,
     GameComponent,
     PlayerComponent,
-    DialogAddPlayerComponent
+    DialogAddPlayerComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +33,9 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule
+  ],
+  entryComponents: [ 
+    DialogAddPlayerComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

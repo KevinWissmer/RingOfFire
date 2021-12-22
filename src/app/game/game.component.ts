@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../models/game';
 import {MatDialog} from '@angular/material/dialog';
+//import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
+
 
 @Component({
   selector: 'app-game',
@@ -13,14 +15,13 @@ export class GameComponent implements OnInit {
   selected_index = -1;
   deletables = [-5];
   last_selected_index = -1;
+  
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
   
   ngOnInit(): void {
     this.newGame();
   }
-
-
 
   newGame() {
     this.game = new Game();
