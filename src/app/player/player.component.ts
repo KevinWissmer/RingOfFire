@@ -22,6 +22,11 @@ export class PlayerComponent implements OnInit {
     });
   }
 
+  highlightPlayer(name) {
+    console.log(name);
+    this.game.active_player_id = name;
+  }
+
   ngOnInit(): void {
   }
 

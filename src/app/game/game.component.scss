@@ -2,6 +2,38 @@ $card_height: 20vw;
 $card_width: $card_height * 346/529;
 $ring_radius: 20vw;
 
+$player_box_width: 120px;
+
+$mat-xs: "screen and (max-width: 599px)";
+$mat-sm: "screen and (min-width: 600px) and (max-width: 959px)";
+$mat-md: "screen and (min-width: 960px) and (max-width: 1279px)";
+$mat-lg: "screen and (min-width: 1280px) and (max-width: 1919px)";
+$mat-xl: "screen and (min-width: 1920px) and (max-width: 5000px)";
+$mat-lt-sm: "screen and (max-width: 599px)";
+$mat-lt-md: "screen and (max-width: 959px)";
+$mat-lt-lg: "screen and (max-width: 1279px)";
+$mat-lt-xl: "screen and (max-width: 1919px)";
+$mat-gt-xs: "screen and (min-width: 600px)";
+$mat-gt-sm: "screen and (min-width: 960px)";
+$mat-gt-md: "screen and (min-width: 1280px)";
+$mat-gt-xl: "screen and (min-width: 1920px)";
+
+@media #{$mat-gt-xs} {
+    .card-stack{
+        height: 10vw;
+        left: -10vw * 346/529 * 0.5;
+        bottom: $ring_radius + 0.5 * 10vw;
+        
+        img{
+            width: 10vw * 346/529;
+            height: 10vw;
+            padding-bottom: 10vh;
+        }
+    }
+  }
+
+
+
 .game-bg {
     height: 85vh;
     width: 100vw;
@@ -22,6 +54,7 @@ $ring_radius: 20vw;
     width: 0px;
     left: -$card_width * 0.5;
     bottom: $ring_radius + 0.5 * $card_height;
+    
     img{
         position: absolute;
         top: 0px;
@@ -71,17 +104,14 @@ $ring_radius: 20vw;
 }
 
 .players-wrapper {
+    background-color: #122024;
     height: 15vh;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    
+
+    
 }
 
-.single-player-wrapper {
-    height: 90%;
-    width: 150px;
-    background-color: black;
-    margin-left: 5px;
-    margin-right: 5px;
-}

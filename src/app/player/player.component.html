@@ -1,14 +1,40 @@
-<ng-container *ngFor="let c of game.players; let i = index" >
-    <div  class="single-player-wrapper">
-        <div class="player-img">
-            <img src="{{ c.img }}" >
+
+<div class="wrapper-all-players">
+    <ng-container *ngFor="let c of game.players; let i = index">
+
+
+
+        <div *ngIf="c.id === game.active_player_id ;else active_player" (click)="highlightPlayer(c.id )" class="single-highlighted-player-wrapper">
+            <div class="player-img">
+                <img src="{{ c.img }}" >
+            </div>
+            
+            <span>{{ c.name }}</span>
         </div>
+    
+        <ng-template #active_player>
+            <div (click)="highlightPlayer(c.id )" class="single-player-wrapper">
+                <div class="player-img">
+                    <img src="{{ c.img }}" >
+                </div>
+                
+                <span>{{ c.name }}</span>
+            </div>
+        </ng-template>
         
-        <span>{{ c.name }}</span>
+    </ng-container>
+</div>
+
+<div class="single-player-wrapper current-player-wrapper" >
+    <div class="player-img">
+        <img src="{{ game.active_player.img }}" >
     </div>
-</ng-container>
-<div class="single-player-wrapper" >
-    <button mat-fab color="primary" style="margin-top: 25%;" (click)="openDialog()">
+    
+    <span>{{ game.active_player.name }}</span>
+</div>
+
+<div class="single-player-wrapper add-player-wrapper" >
+    <button mat-fab color="basic" style="margin-top: 25%;" (click)="openDialog()">
         <mat-icon >add</mat-icon>
     </button>
     <span>new player</span>

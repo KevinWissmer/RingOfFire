@@ -4,10 +4,10 @@
     <div class="card-stack">
         <ng-container *ngFor="let c of cards_ids; let i = index">
             <img [class.upper-card]="selected_index == c" [class.second-upper-card]="last_selected_index == c" [class.active]="deletables.indexOf(i)>-1" [id]="c"
-                (click)="setIndex(i)" [ngStyle]="{'transform': 'rotate(' + c * (360/52) +'deg)' }"
+                (click)="setIndex(i)" [ngStyle]="{'transform': 'rotate(' + c * (360/53) +'deg)' }"
                 src="/assets/img/cards/bg/gray_back.png">
             <img [class.upper-card]="selected_index == c" [class.second-upper-card]="last_selected_index == c" class="flip-card-inner" [class.flip-card]="deletables.indexOf(i)>-1" [id]="c"
-                (click)="setIndex(i)" [ngStyle]="{'transform': 'rotate(' + c * (360/52) +'deg)' }"
+                (click)="setIndex(i)" [ngStyle]="{'transform': 'rotate(' + c * (360/53) +'deg)' }"
                 src="{{ game.cards[c].img }}">
         </ng-container>
     </div>

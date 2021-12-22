@@ -1,32 +1,99 @@
-.players-wrapper {
-    height: 15vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
+$player_box_width: 120px;
 
 .single-player-wrapper {
+
     flex-direction: column;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 90%;
-    width: 120px;
-    background-color: grey;
-    margin: 15px;
+    height: 140px;
+    min-width: 110px;
+    margin: 10px;
+    background-image:  url('../../assets/img/gui_elements/player_bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     span{
-        background-color: khaki;
         text-align: center;
+        color: rgb(163,25,25);
+        font-size: 12px;
+        margin-bottom: 30px;
+        font-weight: bold;
     }
 }
 
+  
+
+
+.wrapper-all-players{
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-y: hidden ;
+    position: absolute;
+    left: $player_box_width + 45px;
+    right: $player_box_width;
+    background-image: linear-gradient(to right, #18292e, #325863 50%, #18292e 100%);
+    
+}
+
+
+
+.single-highlighted-player-wrapper {
+
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    min-width: 120px !important;
+    
+    background-image:  url('../../assets/img/gui_elements/player_bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 10px;
+    span{
+        text-align: center;
+        color: rgb(163,25,25);
+        font-size: 12px;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+}
+
+.current-player-wrapper{
+    position: absolute;
+    height: 170px !important;
+    min-width: 140px !important;
+    left: 0px;
+    z-index: 2;
+    span{
+        font-size: 15px;
+    }
+}
+
+.add-player-wrapper{
+    position: absolute;
+    height: 160px !important;
+    min-width: $player_box_width - 30px !important;
+    right: 0px;
+    z-index: 2;
+    background-image: none;
+    span{
+        font-size: 15px;
+    }
+}
 
 .player-img {
     position: relative;
-    background-color: khaki;
-    width: 100%;
-    padding-top: 100%;
+    background-color: black;
+    width: 50%;
+    padding-top: 50%;
+    margin-top: 30%;
     border-radius: 100%;
     img{
         position:  absolute;

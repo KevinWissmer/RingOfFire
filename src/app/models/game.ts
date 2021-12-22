@@ -1,11 +1,19 @@
 export class Game {
     public cards: { id: number, name: string, img: string, number: number }[] = [];
-    public players: { id: number, name: string, img: string}[] = [];
-    
+    public players: { id: number, name: string, img: string }[] = [];
+    public active_player_id: number = 0;
+    public active_player = { "id": 0, "name": "Peter", "img": "/assets/img/profile/default_player.png" };
+
 
     constructor() {
         this.createCards();
-        this.players = [{"id": 0, "name": "Peter", "img": "/assets/img/profile/default_player.png"}, {"id": 2, "name": "Robert", "img": "/assets/img/profile/default_player.png"}]
+        this.players = [
+            { "id": 0, "name": "Peter", "img": "/assets/img/profile/default_player.png" },
+            { "id": 1, "name": "Robert", "img": "/assets/img/profile/default_player.png" },
+            { "id": 2, "name": "Robert", "img": "/assets/img/profile/default_player.png" },
+            { "id": 3, "name": "Robert", "img": "/assets/img/profile/default_player.png" },
+            { "id": 4, "name": "Robert", "img": "/assets/img/profile/default_player.png" }
+        ]
     }
 
     createCards() {
@@ -17,18 +25,18 @@ export class Game {
 
     createSingleCardPerColor(index: number) {
         let name = this.getCardName(index);
-        this.cards.push({"id": (index - 1) * 4 + 0, "name": "Club " + name, "img": "/assets/img/cards/clubs_"+ index +".png", "number": index});
-        this.cards.push({"id": (index - 1) * 4 + 1, "name": "Diamond " + name, "img": "/assets/img/cards/diamonds_"+ index +".png", "number": index});
-        this.cards.push({"id": (index - 1) * 4 + 2, "name": "Heart " + name, "img": "/assets/img/cards/hearts_"+ index +".png", "number": index});
-        this.cards.push({"id": (index - 1) * 4 + 3, "name": "Spade " + name, "img": "/assets/img/cards/spade_"+ index +".png", "number": index});
+        this.cards.push({ "id": (index - 1) * 4 + 0, "name": "Club " + name, "img": "/assets/img/cards/clubs_" + index + ".png", "number": index });
+        this.cards.push({ "id": (index - 1) * 4 + 1, "name": "Diamond " + name, "img": "/assets/img/cards/diamonds_" + index + ".png", "number": index });
+        this.cards.push({ "id": (index - 1) * 4 + 2, "name": "Heart " + name, "img": "/assets/img/cards/hearts_" + index + ".png", "number": index });
+        this.cards.push({ "id": (index - 1) * 4 + 3, "name": "Spade " + name, "img": "/assets/img/cards/spade_" + index + ".png", "number": index });
     }
 
 
     addPlayer(name: string) {
-        this.players.push({"id": this.getnewPlayerId(), "name": name, "img": "/assets/img/profile/default_player.png"})
+        this.players.push({ "id": this.getnewPlayerId(), "name": name, "img": "/assets/img/profile/default_player.png" })
     }
 
-    getnewPlayerId () {
+    getnewPlayerId() {
         let id_list: number[] = [];
         this.players.forEach(element => {
             id_list.push(element.id);
@@ -42,9 +50,9 @@ export class Game {
 
     //currently unused
     getCardById(id: number) {
-        let current_card: { id: number, name: string, img: string, number: number } = {"id": -1, "name": "not found", "img": "", "number": -1};
+        let current_card: { id: number, name: string, img: string, number: number } = { "id": -1, "name": "not found", "img": "", "number": -1 };
         for (let index = 0; index < this.cards.length; index++) {
-            if(this.cards[index].id == id) {
+            if (this.cards[index].id == id) {
                 current_card = this.cards[index];
             }
         }
