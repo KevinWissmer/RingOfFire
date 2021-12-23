@@ -4,7 +4,7 @@
 
 
 
-        <div *ngIf="c.id === game.active_player_id ;else active_player" (click)="highlightPlayer(c.id )" class="single-highlighted-player-wrapper">
+        <div *ngIf="c.id === game.active_player_id ;else active_player" (click)="highlightPlayer(c)" class="single-highlighted-player-wrapper">
             <div class="player-img">
                 <img src="{{ c.img }}" >
             </div>
@@ -13,7 +13,7 @@
         </div>
     
         <ng-template #active_player>
-            <div (click)="highlightPlayer(c.id )" class="single-player-wrapper">
+            <div  class="single-player-wrapper" (click)="highlightPlayer(c)">
                 <div class="player-img">
                     <img src="{{ c.img }}" >
                 </div>

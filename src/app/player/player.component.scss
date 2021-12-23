@@ -1,4 +1,7 @@
 $player_box_width: 120px;
+$breakpoint-smartphone: 500px;
+$breakpoint-tablet: 768px;
+
 
 .single-player-wrapper {
 
@@ -21,9 +24,6 @@ $player_box_width: 120px;
         font-weight: bold;
     }
 }
-
-  
-
 
 .wrapper-all-players{
     border-left: 1.5px solid black;
@@ -71,8 +71,10 @@ $player_box_width: 120px;
     min-width: 140px !important;
     left: 0px;
     z-index: 2;
+    justify-content: center !important;
     span{
         font-size: 15px;
+        margin-bottom: 40px !important;
     }
 }
 
@@ -93,7 +95,7 @@ $player_box_width: 120px;
     background-color: black;
     width: 50%;
     padding-top: 50%;
-    margin-top: 30%;
+    margin-top: 25%;
     border-radius: 100%;
     img{
         position:  absolute;
@@ -104,5 +106,39 @@ $player_box_width: 120px;
         height: 100%;
         width: 100%;
         border-radius: 100%;
+    }
+}
+
+@media (max-width: $breakpoint-smartphone)  {
+    .wrapper-all-players{
+        border-top: 1.5px solid black;
+        border-left: 0px solid black;
+        border-right: 0px solid black;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .add-player-wrapper{
+        bottom: 15vh;
+    }
+    .current-player-wrapper{
+        bottom: 15vh;
+    }
+}
+
+@media (min-width: $breakpoint-smartphone)  and (max-width: $breakpoint-tablet){
+    .wrapper-all-players{
+        border-top: 1.5px solid black;
+        border-left: 0px solid black;
+        border-right: 0px solid black;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .add-player-wrapper{
+        bottom: 15vh;
+    }
+    .current-player-wrapper{
+        bottom: 15vh;
     }
 }

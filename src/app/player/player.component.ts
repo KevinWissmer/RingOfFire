@@ -22,14 +22,12 @@ export class PlayerComponent implements OnInit {
     });
   }
 
-  highlightPlayer(name) {
-    console.log(name);
-    this.game.active_player_id = name;
+  highlightPlayer(player) {
+    console.log(player.id);
+    //this.game.active_player_id = player.id;
+    this.game.active_player = player;
   }
 
   ngOnInit(): void {
   }
-
-
-
 }

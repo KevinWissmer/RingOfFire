@@ -1,18 +1,37 @@
 export class Game {
     public cards: { id: number, name: string, img: string, number: number }[] = [];
     public players: { id: number, name: string, img: string }[] = [];
-    public active_player_id: number = 0;
-    public active_player = { "id": 0, "name": "Peter", "img": "/assets/img/profile/default_player.png" };
-
+    public active_player_id: number = -1;
+    public active_player = { "id": 0, "name": "Add Player", "img": "/assets/img/gui_elements/arrow-53-64.png" };
+    public player_img_list = [
+        "/assets/img/player_img/bear.png",
+        "/assets/img/player_img/cat.png",
+        "/assets/img/player_img/chicken.png",
+        "/assets/img/player_img/cow.png",
+        "/assets/img/player_img/donkey.png",
+        "/assets/img/player_img/duck.png",
+        "/assets/img/player_img/elephant.png",
+        "/assets/img/player_img/fish.png",
+        "/assets/img/player_img/giraffe.png",
+        "/assets/img/player_img/hamster.png",
+        "/assets/img/player_img/kangaroo.png",
+        "/assets/img/player_img/lion.png",
+        "/assets/img/player_img/owl.png",
+        "/assets/img/player_img/pig.png",
+        "/assets/img/player_img/scorpion.png",
+        "/assets/img/player_img/snail.png",
+        "/assets/img/player_img/tortoise.png",
+        "/assets/img/player_img/wolf.png"
+    ]
 
     constructor() {
         this.createCards();
         this.players = [
-            { "id": 0, "name": "Peter", "img": "/assets/img/profile/default_player.png" },
-            { "id": 1, "name": "Robert", "img": "/assets/img/profile/default_player.png" },
-            { "id": 2, "name": "Robert", "img": "/assets/img/profile/default_player.png" },
-            { "id": 3, "name": "Robert", "img": "/assets/img/profile/default_player.png" },
-            { "id": 4, "name": "Robert", "img": "/assets/img/profile/default_player.png" }
+            { "id": 0, "name": "Peter", "img": this.player_img_list[15] },
+            { "id": 1, "name": "Robert", "img": this.player_img_list[16]  },
+            { "id": 2, "name": "Robert", "img": this.player_img_list[17]  },
+            { "id": 3, "name": "Robert", "img": this.player_img_list[13]  },
+            { "id": 4, "name": "Robert", "img": this.player_img_list[14]  }
         ]
     }
 

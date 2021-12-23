@@ -1,38 +1,12 @@
-$card_height: 20vw;
+$card_height: 150px;
 $card_width: $card_height * 346/529;
-$ring_radius: 20vw;
+$ring_radius: 120px;
 
 $player_box_width: 120px;
 
-$mat-xs: "screen and (max-width: 599px)";
-$mat-sm: "screen and (min-width: 600px) and (max-width: 959px)";
-$mat-md: "screen and (min-width: 960px) and (max-width: 1279px)";
-$mat-lg: "screen and (min-width: 1280px) and (max-width: 1919px)";
-$mat-xl: "screen and (min-width: 1920px) and (max-width: 5000px)";
-$mat-lt-sm: "screen and (max-width: 599px)";
-$mat-lt-md: "screen and (max-width: 959px)";
-$mat-lt-lg: "screen and (max-width: 1279px)";
-$mat-lt-xl: "screen and (max-width: 1919px)";
-$mat-gt-xs: "screen and (min-width: 600px)";
-$mat-gt-sm: "screen and (min-width: 960px)";
-$mat-gt-md: "screen and (min-width: 1280px)";
-$mat-gt-xl: "screen and (min-width: 1920px)";
-
-@media #{$mat-gt-xs} {
-    .card-stack{
-        height: 10vw;
-        left: -10vw * 346/529 * 0.5;
-        bottom: $ring_radius + 0.5 * 10vw;
-        
-        img{
-            width: 10vw * 346/529;
-            height: 10vw;
-            padding-bottom: 10vh;
-        }
-    }
-  }
-
-
+$breakpoint-smartphone: 500px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
 
 .game-bg {
     height: 85vh;
@@ -49,6 +23,133 @@ $mat-gt-xl: "screen and (min-width: 1920px)";
 }
 
 .card-stack{
+    position: relative;
+    height: 150px;
+    width: 0px;
+    left: -150px * 346/529 * 0.5;
+    bottom: 120px + 0.5 * 150px;
+    
+    img{
+        position: absolute;
+        top: 0px;
+        width: 150px * 346/529;
+        height: 150px;
+        transform-origin: bottom;
+        padding-bottom: 120px;
+        transition: filter 80ms ease-in-out, padding-bottom 500ms ease-in-out,top 500ms ease-in-out,transform 500ms ease-in-out, height 500ms ease-in-out 500ms ;
+        opacity: 1;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+        z-index: 1;
+        &:hover {
+            cursor: pointer;
+            filter: brightness(1.8);
+        }
+    }
+}
+
+
+
+@media (max-width: $breakpoint-smartphone)  {
+    .card-stack{
+        height: 70px;
+        left: -60px * 346/529 * 0.5;
+        bottom: 60px + 0.5 * 70px;
+        img{
+            width: 70px * 346/529;
+            height: 70px;
+            padding-bottom: 60px;
+        }
+    }
+    .flip-card{
+        padding-bottom: 60px * 0 !important;
+        top: 60px * 1.6 !important;
+    }
+    .active{
+        padding-bottom: 60px * 0 !important;
+        top: 60px * 1.6 !important;
+    }
+    .game-bg {
+        height: 70vh;
+    }
+    .players-wrapper {
+        height: 30vh !important;
+    }
+}
+
+@media (min-width: $breakpoint-smartphone) and (max-width: $breakpoint-tablet)  {
+    .card-stack{
+        height: 120px;
+        left: -120px * 346/529 * 0.5;
+        bottom: 110px + 0.5 * 120px;
+        img{
+            width: 120px * 346/529;
+            height: 120px;
+            padding-bottom: 110px;
+        }
+    }
+    .flip-card{
+        padding-bottom: 110px * 0 !important;
+        top: 110px * 1.5 !important;
+    }
+    .active{
+        padding-bottom: 110px * 0 !important;
+        top: 110px * 1.5 !important;
+    }
+    .game-bg {
+        height: 70vh;
+    }
+    .players-wrapper {
+        height: 30vh !important;
+    }
+}
+
+
+
+@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+    .card-stack{
+        height: 200px;
+        left: -200px * 346/529 * 0.5;
+        bottom: 150px + 0.5 * 200px;
+        img{
+            width: 200px * 346/529;
+            height: 200px;
+            padding-bottom: 150px;
+        }
+    }
+    .flip-card{
+        padding-bottom: 150px * 0 !important;
+        top: 150px * 1.65 !important;
+    }
+    .active{
+        padding-bottom: 150px * 0 !important;
+        top: 150px * 1.65 !important;
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .card-stack{
+        height: 220px;
+        left: -220px * 346/529 * 0.5;
+        bottom: 160px + 0.5 * 220px;
+        img{
+            width: 220px * 346/529;
+            height: 220px;
+            padding-bottom: 160px;
+        }
+    }
+    .flip-card{
+        padding-bottom: 160px * 0 !important;
+        top: 160px * 1.7 !important;
+    }
+    .active{
+        padding-bottom: 160px * 0 !important;
+        top: 160px * 1.7 !important;
+    }
+}
+
+
+.card-stackSAVE{
     position: relative;
     height: $card_height;
     width: 0px;
@@ -74,6 +175,7 @@ $mat-gt-xl: "screen and (min-width: 1920px)";
     }
 }
 
+
 .flip-card-inner {
     transform: rotateY(180deg) !important;
     &:hover {
@@ -92,13 +194,13 @@ $mat-gt-xl: "screen and (min-width: 1920px)";
 
 .flip-card{
     padding-bottom: $ring_radius * 0 !important;
-    top: $ring_radius * 1.5 !important;
+    top: $ring_radius * 1.6 ;
     transform: unset !important;
 }
 
 .active{
     padding-bottom: $ring_radius * 0 !important;
-    top: $ring_radius * 1.5 !important;
+    top: $ring_radius * 1.6 !important;
     transform: unset !important;
     transform: rotateY(180deg) !important;
 }
@@ -109,9 +211,6 @@ $mat-gt-xl: "screen and (min-width: 1920px)";
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    
-
-    
+    align-items: center;    
 }
 
