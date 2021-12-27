@@ -1,5 +1,6 @@
 export class Game {
     public cards: { id: number, name: string, img: string, number: number }[] = [];
+    public active_card = {};
     public players: { id: number, name: string, img: string }[] = [{"id": 0, "name": "asdasd", "img": "/assets/img/gui_elements/arrow-53-64.png" },{"id": 1, "name": "qweqwe", "img": "/assets/img/gui_elements/arrow-53-64.png" },{"id": 2, "name": "ghjghj", "img": "/assets/img/gui_elements/arrow-53-64.png" }];
     public active_player_index: number = 1;
     public clicked_player_id: number = -1;
@@ -23,7 +24,7 @@ export class Game {
         "/assets/img/player_img/snail.png",
         "/assets/img/player_img/tortoise.png",
         "/assets/img/player_img/wolf.png"
-    ]
+    ];
     public player_animals = [
         "bear",
         "Cat",
@@ -41,8 +42,23 @@ export class Game {
         "Cow",
         "Cow",
         "Cow"
-    ]
-    public info_visibility = true;
+    ];
+    public cardAction = [
+        { title: 'Waterfall', description: 'Everyone has to start drinking at the same time. As soon as player 1 stops drinking, player 2 may stop drinking. Player 3 may stop as soon as player 2 stops drinking, and so on.' },
+        { title: 'Two is choose', description: 'You decide who drinks.' },
+        { title: 'Three is for me', description: 'Congrats! Drink a shot!' },
+        { title: 'Four, on the floor', description: 'Last person to touch the floor drinks.' },
+        { title: 'Five, Bust a jive', description: 'Player 1 makes a dance move. Player 2 repeats the dance move and adds a second one.' },
+        { title: 'Six is for the Chicks', description: 'All girls drink.' },
+        { title: 'Seven, up to heaven', description: 'Put your hands up! The last player drinks!' },
+        { title: 'Eight brings a Mate', description: 'Pick a mate. Your mate must always drink when you drink and the other way around.' },
+        { title: 'Nine, it is time to rhyme', description: 'The card drawer says a word, and you go around the circle coming up with words that rhyme with that word. If someone gets stuck, they drink, and the turn is over. ' },
+        { title: 'Ten is for Men', description: 'All men drink.' },
+        { title: 'Question master', description: 'You are know the question master. The question master can ask a question at any point, and everyone has to avoid answering it. If someone forgets the rule and answers the question, they have to drink.' },
+        { title: 'Never have i ever...', description: 'Say something you never did. Everyone who did it has to drink.' },
+        { title: 'Rule', description: 'Make a rule. Everyone needs to drink when he breaks the rule.' },
+    ];
+    public info_visibility = false;
     selected_name = 'Choose Name';
     selected_img = 'Choose Animal';
 

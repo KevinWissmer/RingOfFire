@@ -34,7 +34,14 @@ export class GameComponent implements OnInit {
     this.selected_index = index;
     this.deletables.push(index);
     console.log(this.game.cards[index]);
+    this.nextCard();
     this.nextPlayer();
+
+  }
+
+  nextCard() {
+    this.game.info_visibility = true;
+    this.game.active_card = this.game.cards[this.selected_index];
   }
 
   nextPlayer() {
