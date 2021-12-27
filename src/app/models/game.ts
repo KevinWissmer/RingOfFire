@@ -42,6 +42,7 @@ export class Game {
         "Cow",
         "Cow"
     ]
+    public info_visibility = true;
     selected_name = 'Choose Name';
     selected_img = 'Choose Animal';
 

@@ -16,6 +16,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { InfoCardGameComponent } from './info-card-game/info-card-game.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { InfoCardGameComponent } from './info-card-game/info-card-game.component
   ],
   imports: [
     BrowserModule,
+    MatCardModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
