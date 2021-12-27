@@ -34,7 +34,5 @@ export class DialogAddPlayerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //console.log( this.data );
-
   }
 }

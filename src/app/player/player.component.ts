@@ -11,22 +11,23 @@ export class PlayerComponent implements OnInit {
   @Input() game;
   public player_name: string = 'asdasdasd';
   constructor(public dialog: MatDialog) { }
-  animal: string = 'asdasdasd';
-  name: string = 'asdasdasd';
+  animal: string = '';
+  name: string = '';
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent, {
       data: {
         game: this.game,
-        animal: this.animal,
+        animal: this.animal,        
         name: this.name
       }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('qweqwe dialog was closed', result);
+      console.log('dialog was closed', result);
       if (result != undefined) {
-        this.name = result;
+        this.name = result[0];
+        this.animal = result[1];
       this.game.addPlayer(result);
       }
       
@@ -48,10 +49,6 @@ export class PlayerComponent implements OnInit {
       this.game.active_player = { "id": -1, "name": "Add Player", "img": "/assets/img/gui_elements/arrow-53-64.png" };
     }else{
       this.game.active_player = this.game.players[index];
-    }
-    if(this.game.clicked_player_id == 0//?????????
-      ) {
-        //asdasdasdasdasdasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     }
     this.game.clicked_player_id = -1;
   }

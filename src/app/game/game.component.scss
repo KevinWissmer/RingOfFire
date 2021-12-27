@@ -4,9 +4,14 @@ $ring_radius: 120px;
 
 $player_box_width: 120px;
 
-$breakpoint-smartphone: 500px;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
+$breakpoint-width-smartphone: 500px;
+$breakpoint-width-tablet: 768px;
+$breakpoint-width-desktop: 1024px;
+
+$breakpoint-height-smartphone: 700px;
+$breakpoint-height-desktop: 1000px;
+$breakpoint-height-bigdesktop: 1250px;
+
 
 .game-bg {
     height: 85vh;
@@ -50,7 +55,7 @@ $breakpoint-desktop: 1024px;
 
 
 
-@media (max-width: $breakpoint-smartphone)  {
+@media (max-width: $breakpoint-width-smartphone), (max-height: $breakpoint-height-smartphone) {
     .card-stack{
         height: 70px;
         left: -60px * 346/529 * 0.5;
@@ -69,15 +74,17 @@ $breakpoint-desktop: 1024px;
         padding-bottom: 60px * 0 !important;
         top: 60px * 1.6 !important;
     }
-    .game-bg {
-        height: 70vh;
-    }
+}
+
+    @media (max-width: $breakpoint-width-smartphone) {
     .players-wrapper {
         height: 30vh !important;
     }
 }
 
-@media (min-width: $breakpoint-smartphone) and (max-width: $breakpoint-tablet)  {
+
+
+@media (min-width: $breakpoint-width-smartphone) and (max-width: $breakpoint-width-tablet) {
     .card-stack{
         height: 120px;
         left: -120px * 346/529 * 0.5;
@@ -96,9 +103,7 @@ $breakpoint-desktop: 1024px;
         padding-bottom: 110px * 0 !important;
         top: 110px * 1.5 !important;
     }
-    .game-bg {
-        height: 70vh;
-    }
+    
     .players-wrapper {
         height: 30vh !important;
     }
@@ -106,7 +111,7 @@ $breakpoint-desktop: 1024px;
 
 
 
-@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+@media (min-width: $breakpoint-width-tablet) and (max-width: $breakpoint-width-desktop) {
     .card-stack{
         height: 200px;
         left: -200px * 346/529 * 0.5;
@@ -127,7 +132,7 @@ $breakpoint-desktop: 1024px;
     }
 }
 
-@media (min-width: $breakpoint-desktop) {
+@media (min-width: $breakpoint-width-desktop) {
     .card-stack{
         height: 220px;
         left: -220px * 346/529 * 0.5;
@@ -149,31 +154,81 @@ $breakpoint-desktop: 1024px;
 }
 
 
-.card-stackSAVE{
-    position: relative;
-    height: $card_height;
-    width: 0px;
-    left: -$card_width * 0.5;
-    bottom: $ring_radius + 0.5 * $card_height;
-    
-    img{
-        position: absolute;
-        top: 0px;
-        width: $card_width;
-        height: $card_height;
-        transform-origin: bottom;
-        padding-bottom: $ring_radius;
-        transition: filter 80ms ease-in-out, padding-bottom 500ms ease-in-out,top 500ms ease-in-out,transform 500ms ease-in-out, height 500ms ease-in-out 500ms ;
-        opacity: 1;
-        -webkit-backface-visibility: hidden; /* Safari */
-        backface-visibility: hidden;
-        z-index: 1;
-        &:hover {
-            cursor: pointer;
-            filter: brightness(1.8);
-        }
+
+@media (max-height: $breakpoint-height-smartphone) and (max-width: $breakpoint-width-tablet) {
+    $current_height: 200px;
+    .game-bg {
+        height: calc(100% - $current_height);
+    }
+    .players-wrapper {
+        height: $current_height !important;
+        
     }
 }
+
+@media (min-height: $breakpoint-height-smartphone)  and (max-height: $breakpoint-height-desktop) and (max-width: $breakpoint-width-tablet) {
+    $current_height: 230px;
+    .game-bg {
+        height: calc(100% - $current_height);
+    }
+    .players-wrapper {
+        height: $current_height !important;
+        
+    }
+}
+
+@media (min-height: $breakpoint-height-desktop)  and (max-height: $breakpoint-height-bigdesktop) and (max-width: $breakpoint-width-tablet) {
+    $current_height: 310px;
+    .game-bg {
+        height: calc(100% - $current_height);
+    }
+    .players-wrapper {
+        height: $current_height !important;
+        
+    }
+}
+
+@media (min-height: $breakpoint-height-bigdesktop) and (max-width: $breakpoint-width-tablet) {
+    $current_height: 370px;
+    .game-bg {
+        height: calc(100% - $current_height);
+    }
+    .players-wrapper {
+        height: $current_height !important;
+        
+    }
+}
+
+
+
+
+@media (max-height: $breakpoint-height-smartphone) and (min-width: $breakpoint-width-tablet) {
+    .game-bg {
+        height: 85vh;
+    }
+}
+
+@media (min-height: $breakpoint-height-smartphone)  and (max-height: $breakpoint-height-desktop) and (min-width: $breakpoint-width-tablet) {
+    .game-bg {
+        height: 85vh;
+    }
+}
+
+@media (min-height: $breakpoint-height-desktop)  and (max-height: $breakpoint-height-bigdesktop) and (min-width: $breakpoint-width-tablet) {
+    .game-bg {
+        height: 85vh;
+    }
+}
+
+@media (min-height: $breakpoint-height-bigdesktop) and (min-width: $breakpoint-width-tablet) {
+    .game-bg {
+        height: 85vh;
+    }
+}
+
+
+
+
 
 
 .flip-card-inner {
