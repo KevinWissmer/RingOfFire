@@ -1,0 +1,52 @@
+.option-field{
+    height: 75px !important;
+    div{
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
+
+.single-player-wrapper {
+
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 230px;
+    min-width: 110px;
+    margin: 10px;
+    background-image:  url('../../assets/img/gui_elements/player_bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    span{
+        text-align: center;
+        color: rgb(163,25,25);
+        font-size: 12px;
+        margin-bottom: 30px;
+        font-weight: bold;
+        height: 20px;
+    }
+}
+
+.current-player-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20%;
+    height: 170px !important;
+    min-width: 140px !important;
+
+    z-index: 2;
+    justify-content: center !important;
+    img{
+        height: 50%;
+    }
+    span{
+        font-size: 15px;
+        margin-top: 10px !important;
+        height: 20px;
+    }
+}

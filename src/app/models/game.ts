@@ -2,7 +2,8 @@ export class Game {
     public cards: { id: number, name: string, img: string, number: number }[] = [];
     public players: { id: number, name: string, img: string }[] = [];
     public active_player_id: number = -1;
-    public active_player = { "id": 0, "name": "Add Player", "img": "/assets/img/gui_elements/arrow-53-64.png" };
+    public clicked_player_id: number = -1;
+    public active_player = { "id": -1, "name": "Add Player", "img": "/assets/img/gui_elements/arrow-53-64.png" };
     public player_img_list = [
         "/assets/img/player_img/bear.png",
         "/assets/img/player_img/cat.png",
@@ -23,16 +24,30 @@ export class Game {
         "/assets/img/player_img/tortoise.png",
         "/assets/img/player_img/wolf.png"
     ]
+    public player_animals = [
+        "bear",
+        "Cat",
+        "chicken",
+        "Cow",
+        "donkey",
+        "duck",
+        "elephant",
+        "fish",
+        "giraffe",
+        "hamster",
+        "Cow",
+        "Cow",
+        "Cow",
+        "Cow",
+        "Cow",
+        "Cow"
+    ]
+    selected_name = 'Choose Name';
+    selected_img = 'Choose Animal';
 
     constructor() {
         this.createCards();
-        this.players = [
-            { "id": 0, "name": "Peter", "img": this.player_img_list[15] },
-            { "id": 1, "name": "Robert", "img": this.player_img_list[16]  },
-            { "id": 2, "name": "Robert", "img": this.player_img_list[17]  },
-            { "id": 3, "name": "Robert", "img": this.player_img_list[13]  },
-            { "id": 4, "name": "Robert", "img": this.player_img_list[14]  }
-        ]
+
     }
 
     createCards() {
@@ -51,8 +66,11 @@ export class Game {
     }
 
 
-    addPlayer(name: string) {
-        this.players.push({ "id": this.getnewPlayerId(), "name": name, "img": "/assets/img/profile/default_player.png" })
+    addPlayer(player) {
+        this.players.push({ "id": this.getnewPlayerId(), "name": player[0], "img": player[1] })
+        if(this.players.length == 1) {
+            this.active_player = this.players[0];
+        }
     }
 
     getnewPlayerId() {

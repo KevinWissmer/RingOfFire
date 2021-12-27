@@ -1,41 +1,46 @@
-
 <div class="wrapper-all-players">
     <ng-container *ngFor="let c of game.players; let i = index">
 
 
 
-        <div *ngIf="c.id === game.active_player_id ;else active_player" (click)="highlightPlayer(c)" class="single-highlighted-player-wrapper">
+        <div *ngIf="c.id === game.clicked_player_id ;else active_player" class="single-player-wrapper">
             <div class="player-img">
-                <img src="{{ c.img }}" >
+                <img src="{{ c.img }}">
             </div>
-            
             <span>{{ c.name }}</span>
-        </div>
-    
-        <ng-template #active_player>
-            <div  class="single-player-wrapper" (click)="highlightPlayer(c)">
-                <div class="player-img">
-                    <img src="{{ c.img }}" >
+            <div class="delete-dialog">
+                <mat-icon>delete_outline</mat-icon>
+                <span>Delete {{ c.name }}?</span>
+                <div class="button-box-yn">
+                    <button mat-stroked-button color="basic" (click)="deletePlayerNo()">No</button>
+                    <button mat-stroked-button color="basic" (click)="deletePlayerYes(c)">Yes</button>
                 </div>
-                
+            </div>
+        </div>
+
+        <ng-template #active_player>
+            <div class="single-player-wrapper" (click)="highlightPlayer(c)">
+                <div class="player-img">
+                    <img src="{{ c.img }}">
+                </div>
                 <span>{{ c.name }}</span>
             </div>
         </ng-template>
-        
+
     </ng-container>
 </div>
 
-<div class="single-player-wrapper current-player-wrapper" >
+<div class="single-player-wrapper current-player-wrapper">
     <div class="player-img">
-        <img src="{{ game.active_player.img }}" >
+        <img src="{{ game.active_player.img }}">
     </div>
-    
+
     <span>{{ game.active_player.name }}</span>
 </div>
 
-<div class="single-player-wrapper add-player-wrapper" >
+<div class="single-player-wrapper add-player-wrapper">
     <button mat-fab color="basic" style="margin-top: 25%;" (click)="openDialog()">
-        <mat-icon >add</mat-icon>
+        <mat-icon>add</mat-icon>
     </button>
     <span>new player</span>
 </div>

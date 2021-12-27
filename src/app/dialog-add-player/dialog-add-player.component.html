@@ -1,12 +1,37 @@
 <h1 mat-dialog-title>Add new Player</h1>
 <div mat-dialog-content>
-  <p>Please enter your name</p>
+  <div class="single-player-wrapper">
+    <div class="current-player-wrapper">
+      <img src="{{animal}}" alt="">
+      <span>
+        {{name}}
+      </span>
+    </div>
+  </div>
+
+  <p>Please enter your name </p>
   <mat-form-field appearance="fill">
     <mat-label>name</mat-label>
-    <input matInput [(ngModel)]="player_name">
+
+    <input matInput [(ngModel)]="name" #input maxlength="10">
+    <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
   </mat-form-field>
+
+  <p>Please choose your Animal</p>
+  <mat-select [(ngModel)]="animal">
+    <ng-container *ngFor="let c of data.game.player_img_list; let i = index">
+      <mat-option value="{{c}}" class="option-field">
+        <div>
+          <img src="{{c}}" alt="" with="100%" height="50">
+        </div>
+      </mat-option>
+    </ng-container>
+  </mat-select>
+
+
 </div>
+
 <div mat-dialog-actions>
-    <button mat-button mat-dialog-close>No Thanks</button>
-  <button mat-button [mat-dialog-close]="player_name" cdkFocusInitial>Ok</button>
+  <button mat-button mat-dialog-close (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="[name,animal]" cdkFocusInitial>Ok</button>
 </div>

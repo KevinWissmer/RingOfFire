@@ -16,6 +16,7 @@ export class GameComponent implements OnInit {
   deletables = [-5];
   last_selected_index = -1;
   
+  
 
   constructor(public dialog: MatDialog) { }
   
