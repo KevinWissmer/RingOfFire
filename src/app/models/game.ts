@@ -1,7 +1,7 @@
 export class Game {
     public cards: { id: number, name: string, img: string, number: number }[] = [];
-    public players: { id: number, name: string, img: string }[] = [];
-    public active_player_id: number = -1;
+    public players: { id: number, name: string, img: string }[] = [{"id": 0, "name": "asdasd", "img": "/assets/img/gui_elements/arrow-53-64.png" },{"id": 1, "name": "qweqwe", "img": "/assets/img/gui_elements/arrow-53-64.png" },{"id": 2, "name": "ghjghj", "img": "/assets/img/gui_elements/arrow-53-64.png" }];
+    public active_player_index: number = 1;
     public clicked_player_id: number = -1;
     public active_player = { "id": -1, "name": "Add Player", "img": "/assets/img/gui_elements/arrow-53-64.png" };
     public player_img_list = [
@@ -70,6 +70,7 @@ export class Game {
         this.players.push({ "id": this.getnewPlayerId(), "name": player[0], "img": player[1] })
         if(this.players.length == 1) {
             this.active_player = this.players[0];
+            this.active_player_index = 0;
         }
     }
 
