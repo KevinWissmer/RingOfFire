@@ -1,8 +1,10 @@
 <mat-card  *ngIf="game.info_visibility" class="card-box">
-    <mat-card-title>{{game.active_player.name}} has to....</mat-card-title>
+    <mat-card-header>
+        <mat-card-title>{{game.card_action[game.active_card.number - 1].title}}</mat-card-title>
+      </mat-card-header>
     <mat-card-content>
         <p>
-          {{game.active_card.name}}
+          {{game.card_action[game.active_card.number - 1].description}}
         </p>
       </mat-card-content>
 </mat-card>

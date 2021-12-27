@@ -1,5 +1,5 @@
 export class Game {
-    public cards: { id: number, name: string, img: string, number: number }[] = [];
+    public cards: { id: number, name: string, img: string, number: number}[] = [];
     public active_card = {};
     public players: { id: number, name: string, img: string }[] = [{"id": 0, "name": "asdasd", "img": "/assets/img/gui_elements/arrow-53-64.png" },{"id": 1, "name": "qweqwe", "img": "/assets/img/gui_elements/arrow-53-64.png" },{"id": 2, "name": "ghjghj", "img": "/assets/img/gui_elements/arrow-53-64.png" }];
     public active_player_index: number = 1;
@@ -43,7 +43,7 @@ export class Game {
         "Cow",
         "Cow"
     ];
-    public cardAction = [
+    public card_action = [
         { title: 'Waterfall', description: 'Everyone has to start drinking at the same time. As soon as player 1 stops drinking, player 2 may stop drinking. Player 3 may stop as soon as player 2 stops drinking, and so on.' },
         { title: 'Two is choose', description: 'You decide who drinks.' },
         { title: 'Three is for me', description: 'Congrats! Drink a shot!' },
@@ -76,10 +76,10 @@ export class Game {
 
     createSingleCardPerColor(index: number) {
         let name = this.getCardName(index);
-        this.cards.push({ "id": (index - 1) * 4 + 0, "name": "Club " + name, "img": "/assets/img/cards/clubs_" + index + ".png", "number": index });
-        this.cards.push({ "id": (index - 1) * 4 + 1, "name": "Diamond " + name, "img": "/assets/img/cards/diamonds_" + index + ".png", "number": index });
-        this.cards.push({ "id": (index - 1) * 4 + 2, "name": "Heart " + name, "img": "/assets/img/cards/hearts_" + index + ".png", "number": index });
-        this.cards.push({ "id": (index - 1) * 4 + 3, "name": "Spade " + name, "img": "/assets/img/cards/spade_" + index + ".png", "number": index });
+        this.cards.push({ "id": (index - 1) * 4 + 0, "name": "Club " + name, "img": "/assets/img/cards/clubs_" + index + ".png", "number": index});
+        this.cards.push({ "id": (index - 1) * 4 + 1, "name": "Diamond " + name, "img": "/assets/img/cards/diamonds_" + index + ".png", "number": index});
+        this.cards.push({ "id": (index - 1) * 4 + 2, "name": "Heart " + name, "img": "/assets/img/cards/hearts_" + index + ".png", "number": index});
+        this.cards.push({ "id": (index - 1) * 4 + 3, "name": "Spade " + name, "img": "/assets/img/cards/spade_" + index + ".png", "number": index});
     }
 
 
