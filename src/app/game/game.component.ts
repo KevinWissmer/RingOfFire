@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../models/game';
 import { MatDialog } from '@angular/material/dialog';
+import { QueryDialogComponent } from '../query-dialog/query-dialog.component';
 //import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
 
 
@@ -10,7 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  cards_ids = Array.from(Array(52).keys())
+  cards_ids = Array.from(Array(52).keys());
   game!: Game;
   selected_index = -1;
   deletables: number[] = [];
@@ -30,12 +31,14 @@ export class GameComponent implements OnInit {
   }
 
   setIndex(index: number) {
-    this.last_selected_index = this.selected_index;
-    this.selected_index = index;
-    if (!this.deletables.includes(index)) {
-      this.deletables.push(index);
-      this.nextCard();
-      this.nextPlayer();
+    if (this.game.players.length > 0) {
+      this.last_selected_index = this.selected_index;
+      this.selected_index = index;
+      if (!this.deletables.includes(index)) {
+        this.deletables.push(index);
+        this.nextCard();
+        this.nextPlayer();
+      } 
     }
   }
 
@@ -64,5 +67,23 @@ export class GameComponent implements OnInit {
     }
   }
 
+  openQueryDialog() {
+    const dialogRef = this.dialog.open(QueryDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.restartGame();
+      };
+    });
+  }
+
+  restartGame() {
+    this.cards_ids = Array.from(Array(52).keys());
+    this.selected_index = -1;
+    this.deletables = [];
+    this.last_selected_index = -1;
+    this.game.active_card = {};
+    this.game.info_visibility = false;
+  }
 }
 

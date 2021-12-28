@@ -1,1 +1,6 @@
-<p>query-dialog works!</p>
+<h2 mat-dialog-title>Restart the game?</h2>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Let´s start!</button>
+</mat-dialog-actions>

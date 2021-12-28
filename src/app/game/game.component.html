@@ -14,10 +14,12 @@
 </div>
 
 <div >
-    <button class="restart-btn" mat-fab color="basic">
+    <button class="restart-btn" mat-fab color="basic" (click)="openQueryDialog()">
         <mat-icon>refresh</mat-icon>
     </button>
 </div>
+
+
 
 <app-player [game]="game" class="players-wrapper"></app-player>
 <app-info-card-game  [game]="game" class="info-card-game-wrapper"></app-info-card-game>

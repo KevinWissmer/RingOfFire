@@ -1,7 +1,7 @@
 export class Game {
     public cards: { id: number, name: string, img: string, number: number}[] = [];
     public active_card = {};
-    public players: { id: number, name: string, img: string }[] = [{"id": 0, "name": "asdasd", "img": "/assets/img/gui_elements/arrow-53-64.png" },{"id": 1, "name": "qweqwe", "img": "/assets/img/gui_elements/arrow-53-64.png" },{"id": 2, "name": "ghjghj", "img": "/assets/img/gui_elements/arrow-53-64.png" }];
+    public players: { id: number, name: string, img: string }[] = []; //[{"id": 0, "name": "asdasd", "img": "/assets/img/gui_elements/arrow-53-64.png" },{"id": 1, "name": "qweqwe", "img": "/assets/img/gui_elements/arrow-53-64.png" },{"id": 2, "name": "ghjghj", "img": "/assets/img/gui_elements/arrow-53-64.png" }];
     public active_player_index: number = 1;
     public clicked_player_id: number = -1;
     public active_player = { "id": -1, "name": "Add Player", "img": "/assets/img/gui_elements/arrow-53-64.png" };
