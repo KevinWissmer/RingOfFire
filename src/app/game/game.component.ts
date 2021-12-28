@@ -13,7 +13,7 @@ export class GameComponent implements OnInit {
   cards_ids = Array.from(Array(52).keys())
   game!: Game;
   selected_index = -1;
-  deletables = [-5];
+  deletables: number[] = [];
   last_selected_index = -1;
 
 
@@ -32,16 +32,23 @@ export class GameComponent implements OnInit {
   setIndex(index: number) {
     this.last_selected_index = this.selected_index;
     this.selected_index = index;
-    this.deletables.push(index);
-    console.log(this.game.cards[index]);
-    this.nextCard();
-    this.nextPlayer();
-
+    if (!this.deletables.includes(index)) {
+      this.deletables.push(index);
+      this.nextCard();
+      this.nextPlayer();
+    }
   }
 
   nextCard() {
     this.game.info_visibility = true;
     this.game.active_card = this.game.cards[this.selected_index];
+    if (this.deletables.length == 52) {
+      this.finishGame();
+    }
+  }
+
+  finishGame() {
+    console.log('finish');
   }
 
   nextPlayer() {
@@ -50,7 +57,7 @@ export class GameComponent implements OnInit {
       if (index + 1 < this.game.players.length) {
         this.game.active_player_index = index + 1;
         this.game.active_player = this.game.players[index + 1];
-      }else{
+      } else {
         this.game.active_player_index = 0;
         this.game.active_player = this.game.players[0];
       }

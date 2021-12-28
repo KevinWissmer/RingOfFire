@@ -12,4 +12,7 @@ export class InfoCardGameComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  displayNone() {
+    this.game.info_visibility = false;
+  }
 }

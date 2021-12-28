@@ -1,4 +1,4 @@
-<mat-card  *ngIf="game.info_visibility" class="card-box">
+<mat-card (click)="displayNone()" *ngIf="game.info_visibility" class="card-box">
     <mat-card-header>
         <mat-card-title>{{game.card_action[game.active_card.number - 1].title}}</mat-card-title>
       </mat-card-header>
@@ -8,3 +8,4 @@
         </p>
       </mat-card-content>
 </mat-card>
+

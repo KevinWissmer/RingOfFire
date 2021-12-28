@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { InfoCardGameComponent } from './info-card-game/info-card-game.component';
 import {MatCardModule} from '@angular/material/card';
+import { QueryDialogComponent } from './query-dialog/query-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {MatCardModule} from '@angular/material/card';
     PlayerComponent,
     DialogAddPlayerComponent,
     InfoCardGameComponent,
+    QueryDialogComponent,
   ],
   imports: [
     BrowserModule,
