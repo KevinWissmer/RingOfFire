@@ -46,7 +46,7 @@ export class PlayerComponent implements OnInit {
     
     if(this.game.players.length == 0) {
       this.game.active_player_index = -1;
-      this.game.active_player = { "id": -1, "name": "Add Player", "img": "/assets/img/gui_elements/arrow-53-64.png" };
+      this.game.active_player = { "id": -1, "name": "Add Player", "img": "assets/img/gui_elements/arrow-53-64.png" };
     }else{
       this.game.active_player = this.game.players[index];
     }

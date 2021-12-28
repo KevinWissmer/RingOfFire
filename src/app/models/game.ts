@@ -1,29 +1,29 @@
 export class Game {
     public cards: { id: number, name: string, img: string, number: number}[] = [];
     public active_card = {};
-    public players: { id: number, name: string, img: string }[] = []; //[{"id": 0, "name": "asdasd", "img": "/assets/img/gui_elements/arrow-53-64.png" },{"id": 1, "name": "qweqwe", "img": "/assets/img/gui_elements/arrow-53-64.png" },{"id": 2, "name": "ghjghj", "img": "/assets/img/gui_elements/arrow-53-64.png" }];
+    public players: { id: number, name: string, img: string }[] = []; //[{"id": 0, "name": "asdasd", "img": "assets/img/gui_elements/arrow-53-64.png" },{"id": 1, "name": "qweqwe", "img": "assets/img/gui_elements/arrow-53-64.png" },{"id": 2, "name": "ghjghj", "img": "assets/img/gui_elements/arrow-53-64.png" }];
     public active_player_index: number = 1;
     public clicked_player_id: number = -1;
-    public active_player = { "id": -1, "name": "Add Player", "img": "/assets/img/gui_elements/arrow-53-64.png" };
+    public active_player = { "id": -1, "name": "Add Player", "img": "assets/img/gui_elements/arrow-53-64.png" };
     public player_img_list = [
-        "/assets/img/player_img/bear.png",
-        "/assets/img/player_img/cat.png",
-        "/assets/img/player_img/chicken.png",
-        "/assets/img/player_img/cow.png",
-        "/assets/img/player_img/donkey.png",
-        "/assets/img/player_img/duck.png",
-        "/assets/img/player_img/elephant.png",
-        "/assets/img/player_img/fish.png",
-        "/assets/img/player_img/giraffe.png",
-        "/assets/img/player_img/hamster.png",
-        "/assets/img/player_img/kangaroo.png",
-        "/assets/img/player_img/lion.png",
-        "/assets/img/player_img/owl.png",
-        "/assets/img/player_img/pig.png",
-        "/assets/img/player_img/scorpion.png",
-        "/assets/img/player_img/snail.png",
-        "/assets/img/player_img/tortoise.png",
-        "/assets/img/player_img/wolf.png"
+        "assets/img/player_img/bear.png",
+        "assets/img/player_img/cat.png",
+        "assets/img/player_img/chicken.png",
+        "assets/img/player_img/cow.png",
+        "assets/img/player_img/donkey.png",
+        "assets/img/player_img/duck.png",
+        "assets/img/player_img/elephant.png",
+        "assets/img/player_img/fish.png",
+        "assets/img/player_img/giraffe.png",
+        "assets/img/player_img/hamster.png",
+        "assets/img/player_img/kangaroo.png",
+        "assets/img/player_img/lion.png",
+        "assets/img/player_img/owl.png",
+        "assets/img/player_img/pig.png",
+        "assets/img/player_img/scorpion.png",
+        "assets/img/player_img/snail.png",
+        "assets/img/player_img/tortoise.png",
+        "assets/img/player_img/wolf.png"
     ];
     public player_animals = [
         "bear",
@@ -79,10 +79,10 @@ export class Game {
 
     createSingleCardPerColor(index: number) {
         let name = this.getCardName(index);
-        this.cards.push({ "id": (index - 1) * 4 + 0, "name": "Club " + name, "img": "/assets/img/cards/clubs_" + index + ".png", "number": index});
-        this.cards.push({ "id": (index - 1) * 4 + 1, "name": "Diamond " + name, "img": "/assets/img/cards/diamonds_" + index + ".png", "number": index});
-        this.cards.push({ "id": (index - 1) * 4 + 2, "name": "Heart " + name, "img": "/assets/img/cards/hearts_" + index + ".png", "number": index});
-        this.cards.push({ "id": (index - 1) * 4 + 3, "name": "Spade " + name, "img": "/assets/img/cards/spade_" + index + ".png", "number": index});
+        this.cards.push({ "id": (index - 1) * 4 + 0, "name": "Club " + name, "img": "assets/img/cards/clubs_" + index + ".png", "number": index});
+        this.cards.push({ "id": (index - 1) * 4 + 1, "name": "Diamond " + name, "img": "assets/img/cards/diamonds_" + index + ".png", "number": index});
+        this.cards.push({ "id": (index - 1) * 4 + 2, "name": "Heart " + name, "img": "assets/img/cards/hearts_" + index + ".png", "number": index});
+        this.cards.push({ "id": (index - 1) * 4 + 3, "name": "Spade " + name, "img": "assets/img/cards/spade_" + index + ".png", "number": index});
     }
 
 

@@ -16,7 +16,7 @@ export interface DialogData {
 })
 export class DialogAddPlayerComponent implements OnInit {
   @Input() name = '';
-  @Input() animal = '/assets/img/gui_elements/player_placeholder.png';
+  @Input() animal = 'assets/img/gui_elements/player_placeholder.png';
 
 
   constructor(
