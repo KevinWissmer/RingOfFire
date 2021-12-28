@@ -9,7 +9,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class PlayerComponent implements OnInit {
   @Input() game;
-  public player_name: string = 'asdasdasd';
+  public player_name: string = 'test';
   constructor(public dialog: MatDialog) { }
   animal: string = '';
   name: string = '';

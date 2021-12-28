@@ -19,6 +19,7 @@ import { InfoCardGameComponent } from './info-card-game/info-card-game.component
 import {MatCardModule} from '@angular/material/card';
 import { QueryDialogComponent } from './query-dialog/query-dialog.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     DialogAddPlayerComponent,
     InfoCardGameComponent,
     QueryDialogComponent,
-    SnackbarComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,8 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule 
+    MatSelectModule,
+    MatSnackBarModule,
   ],
   entryComponents: [ 
     DialogAddPlayerComponent

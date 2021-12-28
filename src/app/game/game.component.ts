@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../models/game';
 import { MatDialog } from '@angular/material/dialog';
+import { SnackbarComponent } from '../snackbar/snackbar.component';
 import { QueryDialogComponent } from '../query-dialog/query-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 //import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
 
 
@@ -16,10 +18,10 @@ export class GameComponent implements OnInit {
   selected_index = -1;
   deletables: number[] = [];
   last_selected_index = -1;
+  durationInSeconds = 2.5;
 
 
-
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.newGame();
@@ -39,6 +41,8 @@ export class GameComponent implements OnInit {
         this.nextCard();
         this.nextPlayer();
       } 
+    }else{
+      this.openSnackBar()
     }
   }
 
@@ -84,6 +88,12 @@ export class GameComponent implements OnInit {
     this.last_selected_index = -1;
     this.game.active_card = {};
     this.game.info_visibility = false;
+  }
+
+  openSnackBar() {
+    this._snackBar.openFromComponent(SnackbarComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
   }
 }
 

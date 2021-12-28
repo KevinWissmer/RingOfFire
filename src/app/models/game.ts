@@ -59,8 +59,11 @@ export class Game {
         { title: 'Rule', description: 'Make a rule. Everyone needs to drink when he breaks the rule.' },
     ];
     public info_visibility = false;
+    public snackbar_text = 'asdasdasdasd';
     selected_name = 'Choose Name';
     selected_img = 'Choose Animal';
+
+
 
     constructor() {
         this.createCards();
