@@ -18,6 +18,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { InfoCardGameComponent } from './info-card-game/info-card-game.component';
 import {MatCardModule} from '@angular/material/card';
 import { QueryDialogComponent } from './query-dialog/query-dialog.component';
+import { SnackbarComponent } from './snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { QueryDialogComponent } from './query-dialog/query-dialog.component';
     DialogAddPlayerComponent,
     InfoCardGameComponent,
     QueryDialogComponent,
+    SnackbarComponent,
   ],
   imports: [
     BrowserModule,
